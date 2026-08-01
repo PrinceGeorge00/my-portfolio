@@ -101,14 +101,14 @@ const certData = [
   {
     title: "Cybersecurity and Digital Forensics Intern",
     issuer: "Cyber Secured India",
-    imgUrl: "/georgefredrickcertificateofcompletion.pdf",
-    link: "#"
+    imgUrl: "/georgefredrickcertificateofcompletion.png",
+    link: "/georgefredrickcertificateofcompletion.pdf"
   },
   {
     title: "Resume and Brand Mastery",
     issuer: "Oeson",
-    imgUrl: "/oesoncertificate.pdf",
-    link: "#"
+    imgUrl: "/oesoncertificate.png",
+    link: "/oesoncertificate.pdf"
   },
   {
     title: "Hack The Box Certified Ethical Hacker",
