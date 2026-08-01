@@ -10,7 +10,7 @@ const userProfile = {
   resumeUrl: "https://acrobat.adobe.com/id/urn:aaid:sc:EU:8f926923-c107-4870-b22a-a02dfc191b85", // FIX: Restored to a valid string literal.
   badgesUrl: "https://www.credly.com/users/fredrick-george/badges#credly",
   // Initial placeholder image URL
-  profileImg: "https://lh3.googleusercontent.com/gg/AAHar4ddRNVnkkdmNPWiIwTjGs_CDpvWsJW4wqkeSG3BWT2YSmo1Ao5RXfM5iMLiBhhS8j8el495Rt_W5I3Sf3fPdfjD7QlNc4ZjrR0dpV2M7Kj1iUTYVIkYWHdKJ33oLszpKzYoBg8dqGMDz3Z1OgyZ-SJpl1Cc7aC0KmBS72EdO4GjzLOFXqm6IGRQnu8xKdcnB7SG55m0ues0bd9U40u5awlqh7BWwzUifQExkV8xTEdBXLwEEoT3qQkue32EgyyiI1GLBAeGbojJ3Ni_0YXJPY5fqebZvZyj7w=d",
+  profileImg: "/profile.jpeg",
 };
 
 const experienceData = [
