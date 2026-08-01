@@ -7,7 +7,7 @@ const userProfile = {
   name: "George Fredrick",
   title: "Penetration Tester",
   bio: "With a passion for cybersecurity and expertise in ethical hacking, penetration testing, digital forensics and security research I have honed my skillset continuously. With over a year in the field, I've worked on various projects focusing on API security and testing, web security, threat modelling, vulnerability assessment, network security, forensics investigations, cloud security e.t.c. In addition to this I created a platform for aspiring security researchers by fostering a community of cybersecurity professionals as a cybersecurity researcher as well as pioneering Cybersecurity Network (A community of individuals connected to the cybersecurity industry). Additionally, it is my desire to help new and inexperienced individuals break into the cybersecurity field as a commitment to ensuring a secure cyber space.",
-  resumeUrl: "https://acrobat.adobe.com/id/urn:aaid:sc:EU:8f926923-c107-4870-b22a-a02dfc191b85", // FIX: Restored to a valid string literal.
+  resumeUrl: "/resume.pdf", // FIX: Restored to a valid string literal.
   badgesUrl: "https://www.credly.com/users/fredrick-george/badges#credly",
   // Initial placeholder image URL
   profileImg: "/profile.jpeg",
@@ -99,15 +99,15 @@ const certData = [
     link: "https://learn.opswatacademy.com/certifications/1f8ff064-ced4-11ed-b4c8-02aea812ea2d"
   },
   {
-    title: "Palo Alto Networks PCNSA",
-    issuer: "Palo Alto Networks (Mock)",
-    imgUrl: "https://placehold.co/300x150/065f46/d1d5db?text=PCNSA",
+    title: "Cybersecurity and Digital Forensics Intern",
+    issuer: "Cyber Secured India",
+    imgUrl: "/georgefredrickcertificateofcompletion.pdf",
     link: "#"
   },
   {
-    title: "Certified Splunk Core User",
-    issuer: "Splunk (Mock)",
-    imgUrl: "https://placehold.co/300x150/065f46/d1d5db?text=Splunk",
+    title: "Resume and Brand Mastery",
+    issuer: "Oeson",
+    imgUrl: "/oesoncertificate.pdf",
     link: "#"
   },
   {
