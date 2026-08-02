@@ -376,7 +376,7 @@ const ConfidentialProjectCard = ({ project }) => (
   <div className="relative overflow-hidden rounded-lg border border-neutral-700 bg-neutral-900 flex flex-col md:flex-row min-h-[320px]">
     <div
       className="w-full h-48 md:h-auto md:w-2/5 bg-cover bg-center flex-shrink-0"
-      style={{ backgroundImage: "url(/darkseid-logo.jpg)" }}
+      style={{ backgroundImage: "url(/Darksied-brand-logo.jpg)" }}
     ></div>
     <div className="w-full md:w-3/5 p-6 flex flex-col justify-center">
       <h3 className="text-xl font-semibold text-white mb-1">{project.title}</h3>
