@@ -67,35 +67,35 @@ const confidentialProjects = [
     title: "Wabot — Breach Response & Root Cause Analysis",
     years: "2025",
     description: "Engaged by a company experiencing service downtime following a security breach to conduct a full penetration test and lead root cause analysis to determine the breach vector. Beyond identifying the entry point, the engagement focused on closing the exposure end-to-end: securing the company's Python-based automation bots, hardening API integrations, and building monitoring to catch anomalies before they became incidents.",
-    impact: "Business impact: pinpointing the actual root cause meant the client could close the real gap instead of guessing — directly reducing the risk of repeat downtime, reputational damage, and further financial loss from a second breach.",
+    impact: "Business impact: pinpointing the actual root cause meant the client could close the real gap instead of guessing, directly reducing the risk of repeat downtime, reputational damage, and further financial loss from a second breach.",
     tools: ["Python", "API Security", "Root Cause Analysis", "Log Monitoring", "Stress Testing"],
   },
   {
     title: "Nexapay — Pre-Deployment Security Assessment",
     years: "2025",
     description: "Engaged by a payment platform to penetration test their security architecture — landing page, APIs, and website — before new features shipped to production. Testing focused on catching vulnerabilities and loopholes pre-deployment, analyzing transaction patterns for fraud indicators, and supporting the rollout of stronger security protocols around sensitive financial data.",
-    impact: "Business impact: for a fintech handling real transactions, an unpatched vulnerability isn't just a bug — it's potential direct financial loss or regulatory exposure. Catching these issues before deployment protected both customer funds and the platform's compliance standing.",
+    impact: "Business impact: for a fintech handling real transactions, an unpatched vulnerability isn't just a bug it's potential direct financial loss or regulatory exposure. Catching these issues before deployment protected both customer funds and the platform's compliance standing.",
     tools: ["Web App Pentesting", "API Security Testing", "Burp Suite", "Risk Assessment"],
   },
   {
     title: "PAYECARDS Security Assessment",
     years: "2025",
-    description: "Performed a responsible penetration testing assessment on a live fintech platform as part of a recruitment challenge. Conducted passive reconnaissance, network enumeration, and web application analysis to identify security weaknesses without active exploitation — a deliberately conservative approach chosen to demonstrate sound judgment on a live production system. Findings were documented in a full security report with technical evidence, risk ratings, and remediation recommendations.",
-    impact: "Business impact: demonstrated how a real-world assessment should be scoped and executed on live infrastructure without introducing risk to the business — the assessment progressed to a technical interview.",
+    description: "Performed a responsible penetration testing assessment on a live fintech platform as part of a recruitment challenge. Conducted passive reconnaissance, network enumeration, and web application analysis to identify security weaknesses without active exploitation, a deliberately conservative approach chosen to demonstrate sound judgment on a live production system. Findings were documented in a full security report with technical evidence, risk ratings, and remediation recommendations.",
+    impact: "Business impact: demonstrated how a real-world assessment should be scoped and executed on live infrastructure without introducing risk to the business, the assessment progressed to a technical interview.",
     tools: ["Nmap", "Burp Suite", "Searchsploit", "cURL", "Kali Linux"],
   },
   {
     title: "CSI Practical Penetration Testing Lab",
     years: "2025",
     description: "Performed a full penetration test against a vulnerable lab environment as part of the Cyber Secured India internship. Conducted network reconnaissance, service enumeration, vulnerability assessment, and exploit validation, documenting every finding. Successfully identified and validated a vulnerability in an outdated dnsmasq service within the controlled training environment, following ethical hacking and responsible testing practices throughout.",
-    impact: "Business impact: outdated, unpatched network services are exactly what attackers scan for at scale — this exercise reflects the kind of patch-management gap that, in a live environment, could give an attacker a foothold into internal infrastructure.",
+    impact: "Business impact: outdated, unpatched network services are exactly what attackers scan for at scale, this exercise reflects the kind of patch-management gap that, in a live environment, could give an attacker a foothold into internal infrastructure.",
     tools: ["Kali Linux", "Nmap", "Bettercap", "Python", "DNS", "Network Enumeration", "Vulnerability Assessment"],
   },
   {
     title: "Case Study Project",
     years: "2025",
-    description: "Conducted a full penetration test against a vulnerable Ubuntu web server for a confidential client engagement, exploiting a SQL injection vulnerability to gain administrative access, enumerate internal services, and identify further security weaknesses. All findings, evidence, and captured flags were documented in a professional report.",
-    impact: "Business impact: SQL injection remains one of the most common — and most damaging — vulnerabilities in web applications, capable of exposing an entire backend database or granting attacker-level administrative control. Identifying and reporting this class of flaw before a real attacker does is directly tied to preventing data breaches and unauthorized system access.",
+    description: "Conducted a full penetration test against an Ubuntu web server for a confidential client engagement, exploiting a SQL injection vulnerability to gain administrative access, enumerate internal services, and identify further security weaknesses. All findings, evidence, and captured flags were documented in a professional report.",
+    impact: "Business impact: SQL injection remains one of the most common and most damaging vulnerabilities in web applications, capable of exposing an entire backend database or granting attacker-level administrative control. Identifying and reporting this class of flaw before a real attacker does is directly tied to preventing data breaches and unauthorized system access.",
     tools: ["SQL Injection", "Linux Privilege Escalation", "Network Enumeration", "Report Writing"],
   },
 ];
@@ -388,7 +388,7 @@ const ConfidentialProjectCard = ({ project }) => (
   <div className="relative overflow-hidden rounded-lg border border-neutral-700 bg-neutral-900 flex flex-col md:flex-row min-h-[320px]">
     <div
       className="w-full h-48 md:h-auto md:w-2/5 bg-cover bg-center flex-shrink-0"
-      style={{ backgroundImage: "url(/darkseid-logo.jpg)" }}
+      style={{ backgroundImage: "url(/Darksied-logo.jpg)" }}
     ></div>
     <div className="w-full md:w-3/5 p-6 flex flex-col justify-center">
       <h3 className="text-xl font-semibold text-white mb-1">{project.title}</h3>
