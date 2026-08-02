@@ -395,7 +395,7 @@ const ConfidentialProjectCard = ({ project }) => (
   </div>
 );
 
-
+const CertificationCard = ({ cert }) => (
   <Card className="flex flex-col items-center text-center">
     <a href={cert.link} target="_blank" rel="noopener noreferrer" className="block">
       <img
