@@ -18,14 +18,14 @@ const experienceData = [
     role: "Cybersecurity Intern",
     years: "Apr 2025–Jul 2025",
     description: "Assisted with internal penetration testing, vulnerability analysis, and system hardening recommendations. Supported red team assessments against client applications and cloud infrastructures. Conducted OSINT investigations and analyzed metadata from image artifacts. Documented and reported findings using CVSS scoring and remediation best practices. Shadowed senior testers during web app testing, including SQLi, XSS, and LFI exploits. Participated in biweekly CTFs to simulate real-world adversary tactics. Using tools like  Kali Linux, Nmap, Burp Suite, Wireshark, Metasploit, Python, Google Dorking.",
-    icon: <Briefcase className="w-5 h-5 text-gray-400" />,
+    icon: <Briefcase className="w-5 h-5 text-gray-500" />,
   },
   {
     company: "Selah Tech LLC",
     role: "Cybersecurity Trainee",
     years: "Jan 2025–Present",
     description: "Developed Python automation tools for network scans, socket listeners, and result exports, incorporating programming skills critical for penetration testing. Built a network proxy and sniffer to analyze, manipulate, and reconstruct traffic, enhancing vulnerability assessment capabilities. Performed wireless capture and attack simulations, including MITM, Evil Twin, DoS, and MAC spoofing, demonstrating proficiency in applying offensive security techniques. Executed targeted exploitation and penetration tests on web applications (XSS, SQL injection, brute force), aligning methods with industry-standard vulnerability assessments.",
-    icon: <Briefcase className="w-5 h-5 text-gray-400" />,
+    icon: <Briefcase className="w-5 h-5 text-gray-500" />,
   },
 ];
 
@@ -35,7 +35,7 @@ const educationData = [
     degree: "Bachelor's Degree B.A. International Relations and History",
     years: "2019 - 2024",
     details: "Specialized in International Relations and Politics. Completed final year project on 'Idanre Palace Organization'. Relevant coursework: African Politics, Historical Methodology, Pan-Africanism",
-    icon: <GraduationCap className="w-5 h-5 text-gray-400" />,
+    icon: <GraduationCap className="w-5 h-5 text-gray-500" />,
   },
 ];
 
@@ -84,6 +84,12 @@ const certData = [
     issuer: "Cyber Secured India",
     imgUrl: "/csi_certificate_of_achievement.png",
     link: "/csi_certificate_of_achievement.png",
+  },
+  {
+    title: "Cyber Security and Ethical Hacking",
+    issuer: "Selah Tech Academy",
+    imgUrl: "/selahtechcert.jpeg",
+    link: "/selahtechcert.jpeg",
   },
 ];
 
@@ -137,12 +143,6 @@ const courseCertData = [
     imgUrl: "/oesoncertificate.png",
     link: "/oesoncertificate.pdf"
   },
-  {
-    title: "Cyber Security and Ethical Hacking",
-    issuer: "Selah Tech Academy",
-    imgUrl: "/selahtechcert.jpeg",
-    link: "/selahtechcert.jpeg",
-  },
 ];
 
 // --- COMPONENTS ---
@@ -161,7 +161,7 @@ const ScrollLink = ({ to, children, setOpen }) => {
     <a
       href={`#${to}`}
       onClick={handleClick}
-      className="p-2 transition-colors duration-200 hover:text-green-400"
+      className="p-2 transition-colors duration-200 hover:text-green-600"
     >
       {children}
     </a>
@@ -169,7 +169,7 @@ const ScrollLink = ({ to, children, setOpen }) => {
 };
 
 const Card = ({ children, className = "" }) => (
-  <div className={`p-6 bg-gray-800 rounded-xl shadow-lg hover:shadow-green-500/30 transition-shadow ${className}`}>
+  <div className={`p-6 bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-shadow ${className}`}>
     {children}
   </div>
 );
@@ -179,13 +179,11 @@ const Header = () => {
   const navItems = ["about", "experience", "education", "projects", "skills", "certifications", "contact"];
 
   return (
-    <header className="fixed top-0 left-0 w-full bg-gray-900/90 backdrop-blur-sm z-50 shadow-md">
+    <header className="fixed top-0 left-0 w-full bg-white/90 backdrop-blur-sm z-50 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          <div className="flex-shrink-0 text-xl font-bold text-green-400">
-            {userProfile.name.split(' ')[0]} Portfolio
-          </div>
+        <div className="relative flex justify-center items-center h-16 text-gray-700">
 
+          {/* Desktop Nav - centered */}
           <nav className="hidden md:block">
             <div className="flex space-x-4">
               {navItems.map(item => (
@@ -196,10 +194,11 @@ const Header = () => {
             </div>
           </nav>
 
-          <div className="md:hidden">
+          {/* Mobile Menu Button */}
+          <div className="md:hidden absolute right-0">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="p-2 text-gray-300 hover:text-green-400 focus:outline-none focus:ring-2 focus:ring-green-500 rounded-lg"
+              className="p-2 text-gray-700 hover:text-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 rounded-lg"
             >
               {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -208,11 +207,11 @@ const Header = () => {
       </div>
 
       {isOpen && (
-        <div className="md:hidden bg-gray-900 absolute w-full shadow-lg">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 flex flex-col items-start">
+        <div className="md:hidden bg-white absolute w-full shadow-lg">
+          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 flex flex-col items-center">
             {navItems.map(item => (
               <ScrollLink key={item} to={item} setOpen={setIsOpen}>
-                <span className="block px-3 py-2 rounded-md text-base font-medium capitalize text-gray-300 hover:bg-gray-700 w-full text-left">
+                <span className="block px-3 py-2 rounded-md text-base font-medium capitalize text-gray-700 hover:bg-gray-100 w-full text-center">
                   {item}
                 </span>
               </ScrollLink>
@@ -225,7 +224,7 @@ const Header = () => {
 };
 
 const HeroSection = ({ uploadedProfileImg, handleImageUpload }) => (
-  <section className="pt-28 pb-16 bg-gray-900 min-h-screen flex items-center justify-center" id="hero">
+  <section className="pt-28 pb-16 bg-white min-h-screen flex items-center justify-center" id="hero">
     <div className="max-w-4xl mx-auto px-4 text-center">
       <img
         src={uploadedProfileImg}
@@ -240,15 +239,15 @@ const HeroSection = ({ uploadedProfileImg, handleImageUpload }) => (
             onChange={handleImageUpload}
             className="hidden"
           />
-          <span className="text-sm text-gray-400 hover:text-green-400 transition-colors border border-gray-600 px-3 py-1 rounded-full shadow-md">
+          <span className="text-sm text-gray-500 hover:text-green-600 transition-colors border border-gray-300 px-3 py-1 rounded-full shadow-sm">
             {uploadedProfileImg.startsWith('data:image') ? 'Change Profile Picture' : 'Upload Profile Picture'}
           </span>
       </label>
 
-      <h1 className="text-5xl sm:text-7xl font-extrabold text-white mb-2 tracking-tight">
+      <h1 className="text-5xl sm:text-7xl font-extrabold text-gray-900 mb-2 tracking-tight">
         {userProfile.name}
       </h1>
-      <h2 className="text-2xl sm:text-4xl font-light text-green-400 mb-8">
+      <h2 className="text-2xl sm:text-4xl font-light text-green-600 mb-8">
         {userProfile.title}
       </h2>
       <div className="flex justify-center space-x-4">
@@ -264,7 +263,7 @@ const HeroSection = ({ uploadedProfileImg, handleImageUpload }) => (
           href={userProfile.badgesUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="px-6 py-3 bg-gray-700 text-gray-100 font-semibold rounded-lg shadow-md hover:bg-gray-600 transition-colors flex items-center"
+          className="px-6 py-3 bg-gray-100 text-gray-800 font-semibold rounded-lg shadow-md hover:bg-gray-200 transition-colors flex items-center"
         >
           <BadgeCheck className="w-5 h-5 mr-2" /> View Badges
         </a>
@@ -274,8 +273,8 @@ const HeroSection = ({ uploadedProfileImg, handleImageUpload }) => (
 );
 
 const SectionHeader = ({ title, icon: Icon }) => (
-  <h2 className="text-4xl font-bold text-white mb-10 border-b-2 border-green-500 pb-2 flex items-center">
-    {Icon && <Icon className="w-8 h-8 text-green-400 mr-3" />}
+  <h2 className="text-4xl font-bold text-gray-900 mb-10 border-b-2 border-green-500 pb-2 flex items-center">
+    {Icon && <Icon className="w-8 h-8 text-green-600 mr-3" />}
     {title}
   </h2>
 );
@@ -283,14 +282,14 @@ const SectionHeader = ({ title, icon: Icon }) => (
 const TimelineItem = ({ data }) => (
   <Card className="mb-8">
     <div className="flex items-start space-x-4">
-      <div className="p-3 bg-green-500 rounded-full text-gray-900 flex-shrink-0">
+      <div className="p-3 bg-green-500 rounded-full text-white flex-shrink-0">
         {data.icon}
       </div>
       <div>
-        <h3 className="text-2xl font-semibold text-green-400">{data.role || data.degree}</h3>
-        <p className="text-xl text-white mt-1">{data.company || data.institution}</p>
-        <p className="text-sm text-gray-400 mb-3">{data.years}</p>
-        <p className="text-gray-300 leading-relaxed">{data.description || data.details}</p>
+        <h3 className="text-2xl font-semibold text-green-600">{data.role || data.degree}</h3>
+        <p className="text-xl text-gray-900 mt-1">{data.company || data.institution}</p>
+        <p className="text-sm text-gray-500 mb-3">{data.years}</p>
+        <p className="text-gray-700 leading-relaxed">{data.description || data.details}</p>
       </div>
     </div>
   </Card>
@@ -304,11 +303,11 @@ const ProjectCard = ({ project }) => (
       className="w-full h-48 object-cover rounded-lg mb-4"
       onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/400x200/374151/d1d5db?text=Project+Image" }}
     />
-    <h3 className="text-xl font-semibold text-white mb-2">{project.title}</h3>
-    <p className="text-gray-400 mb-4 flex-grow">{project.description}</p>
+    <h3 className="text-xl font-semibold text-gray-900 mb-2">{project.title}</h3>
+    <p className="text-gray-600 mb-4 flex-grow">{project.description}</p>
     <div className="flex flex-wrap gap-2 mb-4">
       {project.technologies.map((tech, index) => (
-        <span key={index} className="px-3 py-1 text-xs font-medium text-green-300 bg-green-800 rounded-full">
+        <span key={index} className="px-3 py-1 text-xs font-medium text-green-700 bg-green-100 rounded-full">
           {tech}
         </span>
       ))}
@@ -318,7 +317,7 @@ const ProjectCard = ({ project }) => (
         href={project.githubUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className="text-gray-300 hover:text-green-400 transition-colors flex items-center"
+        className="text-gray-600 hover:text-green-600 transition-colors flex items-center"
       >
         <Github className="w-5 h-5 mr-1" /> GitHub
       </a>
@@ -327,7 +326,7 @@ const ProjectCard = ({ project }) => (
           href={project.liveUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-gray-300 hover:text-green-400 transition-colors flex items-center"
+          className="text-gray-600 hover:text-green-600 transition-colors flex items-center"
         >
           <Link className="w-5 h-5 mr-1" /> Live Demo
         </a>
@@ -346,13 +345,13 @@ const CertificationCard = ({ cert }) => (
         onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/300x150/374151/d1d5db?text=Certificate+Image" }}
       />
     </a>
-    <h4 className="text-lg font-semibold text-white">{cert.title}</h4>
-    <p className="text-sm text-green-400">{cert.issuer}</p>
+    <h4 className="text-lg font-semibold text-gray-900">{cert.title}</h4>
+    <p className="text-sm text-green-600">{cert.issuer}</p>
   </Card>
 );
 
 const ContentSection = ({ id, title, icon, children }) => (
-  <section id={id} className="py-16 bg-gray-900 border-t border-gray-800">
+  <section id={id} className="py-16 bg-white border-t border-gray-200">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <SectionHeader title={title} icon={icon} />
       {children}
@@ -377,7 +376,7 @@ const App = () => {
   };
 
   return (
-    <div className="font-sans bg-gray-900 text-gray-100 min-h-screen">
+    <div className="font-sans bg-white text-gray-900 min-h-screen">
       <Header />
       <main>
         <HeroSection
@@ -388,7 +387,7 @@ const App = () => {
         {/* About Section */}
         <ContentSection id="about" title="About Me" icon={ScrollText}>
           <Card>
-            <p className="text-lg leading-relaxed">{userProfile.bio}</p>
+            <p className="text-lg leading-relaxed text-gray-700">{userProfile.bio}</p>
           </Card>
         </ContentSection>
 
@@ -418,7 +417,7 @@ const App = () => {
             ))}
           </div>
 
-          <h3 className="text-2xl font-semibold text-white mt-16 mb-8">Course Certificates</h3>
+          <h3 className="text-2xl font-semibold text-gray-900 mt-16 mb-8">Course Certificates</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {courseCertData.map((cert, index) => (
               <CertificationCard key={index} cert={cert} />
@@ -440,7 +439,7 @@ const App = () => {
           <Card>
             <div className="flex flex-wrap gap-4">
               {skills.map((skill, index) => (
-                <span key={index} className="px-4 py-2 text-sm font-medium text-white bg-green-600 rounded-full shadow-md hover:bg-green-700 transition-colors cursor-pointer">
+                <span key={index} className="px-4 py-2 text-sm font-medium text-white bg-green-600 rounded-full shadow-sm hover:bg-green-700 transition-colors cursor-pointer">
                   {skill}
                 </span>
               ))}
@@ -451,37 +450,37 @@ const App = () => {
         {/* Contact Section */}
         <ContentSection id="contact" title="Get in Touch" icon={Mail}>
           <Card className="max-w-xl mx-auto">
-            <p className="text-center text-gray-300 mb-6">
+            <p className="text-center text-gray-600 mb-6">
               I'm always open to discussing new projects, creative ideas or opportunities to be part of your visions.
             </p>
             <form action="https://formspree.io/f/xnngkeje" method="POST" className="space-y-4">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-1">Name</label>
+                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Name</label>
                 <input
                   type="text"
                   id="name"
                   name="name"
-                  className="w-full p-3 bg-gray-700 border border-gray-600 rounded-lg focus:ring-green-500 focus:border-green-500 text-white"
+                  className="w-full p-3 bg-white border border-gray-300 rounded-lg focus:ring-green-500 focus:border-green-500 text-gray-900"
                   placeholder="John Doe"
                 />
               </div>
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-1">Email</label>
+                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Email</label>
                 <input
                   type="email"
                   id="email"
                   name="_replyto"
-                  className="w-full p-3 bg-gray-700 border border-gray-600 rounded-lg focus:ring-green-500 focus:border-green-500 text-white"
+                  className="w-full p-3 bg-white border border-gray-300 rounded-lg focus:ring-green-500 focus:border-green-500 text-gray-900"
                   placeholder="john.doe@example.com"
                 />
               </div>
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-1">Message</label>
+                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">Message</label>
                 <textarea
                   id="message"
                   name="message"
                   rows="4"
-                  className="w-full p-3 bg-gray-700 border border-gray-600 rounded-lg focus:ring-green-500 focus:border-green-500 text-white"
+                  className="w-full p-3 bg-white border border-gray-300 rounded-lg focus:ring-green-500 focus:border-green-500 text-gray-900"
                   placeholder="Let's build something amazing together..."
                 ></textarea>
               </div>
@@ -492,32 +491,29 @@ const App = () => {
                 Send Message
               </button>
             </form>
-            <p className="text-xs text-center text-gray-500 mt-4">
-              Note: This form is now fully configured for submission via Formspree.
-            </p>
           </Card>
         </ContentSection>
       </main>
 
       {/* Footer */}
-      <footer className="bg-gray-800 border-t border-gray-700 py-8">
+      <footer className="bg-gray-50 border-t border-gray-200 py-8">
         <div className="max-w-7xl mx-auto px-4 flex flex-col items-center gap-4">
           <div className="flex space-x-6">
-            <a href="https://github.com/PrinceGeorge00" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-green-400 transition-colors">
+            <a href="https://github.com/PrinceGeorge00" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-green-600 transition-colors">
               <Github className="w-6 h-6" />
             </a>
-            <a href="https://www.linkedin.com/in/george-fredrick-4b38a9375" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-green-400 transition-colors">
+            <a href="https://www.linkedin.com/in/george-fredrick-4b38a9375" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-green-600 transition-colors">
               <Linkedin className="w-6 h-6" />
             </a>
-            <a href="https://www.tiktok.com/@prince_george001" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-green-400 transition-colors">
+            <a href="https://www.tiktok.com/@prince_george001" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-green-600 transition-colors">
               <FaTiktok className="w-6 h-6" />
             </a>
-            <a href="https://www.threads.com/@prince_fredrick_george" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-green-400 transition-colors">
+            <a href="https://www.threads.com/@prince_fredrick_george" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-green-600 transition-colors">
               <FaThreads className="w-6 h-6" />
             </a>
           </div>
-          <div className="text-gray-400 text-sm">
-            Copyright © {new Date().getFullYear()} {userProfile.name}. Built with React & Tailwind.
+          <div className="text-gray-500 text-sm">
+            Copyright © {new Date().getFullYear()} {userProfile.name}.
           </div>
         </div>
       </footer>
